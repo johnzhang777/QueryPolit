@@ -1,0 +1,3 @@
+2026-02-13 17:57:21.863417+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "APP_USER" not found (this database is empty); SQL statement:
+INSERT INTO app_user (username, password, role) SELECT 'admin', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'ADMIN' WHERE NOT EXISTS (SELECT 1 FROM app_user WHERE username = 'admin') [42104-224]
