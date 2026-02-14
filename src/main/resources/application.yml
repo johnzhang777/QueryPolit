@@ -27,10 +27,9 @@ spring:
         format_sql: true
     database-platform: org.hibernate.dialect.H2Dialect
 
-  # Spring AI - DeepSeek V3 via OpenAI-compatible client
+  # Spring AI - DeepSeek V3 (native starter)
   ai:
-    openai:
-      base-url: https://api.deepseek.com
+    deepseek:
       api-key: ${DEEPSEEK_KEY:sk-placeholder}
       chat:
         options:

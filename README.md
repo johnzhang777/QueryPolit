@@ -16,8 +16,8 @@ Enterprise-grade Text-to-SQL middleware powered by **DeepSeek V3** via **Spring 
 | Component       | Technology                             |
 |-----------------|----------------------------------------|
 | Language        | Java 17+                               |
-| Framework       | Spring Boot 3.3.6                      |
-| AI Integration  | Spring AI (OpenAI client for DeepSeek) |
+| Framework       | Spring Boot 3.4.5                      |
+| AI Integration  | Spring AI 1.0.0 (native DeepSeek starter) |
 | Internal DB     | H2 (embedded)                          |
 | Target DBs      | MySQL, PostgreSQL, H2                  |
 | SQL Parsing     | JSqlParser 5.0                         |
@@ -46,13 +46,22 @@ Enterprise-grade Text-to-SQL middleware powered by **DeepSeek V3** via **Spring 
 
 ### Step 1 -- Set the DeepSeek API key
 
-The AI query feature uses DeepSeek V3. Export your API key before starting:
+The AI query feature uses DeepSeek V3. You must provide your own API key (obtain one from [https://platform.deepseek.com](https://platform.deepseek.com)).
+
+Set it as an environment variable:
 
 ```bash
 export DEEPSEEK_KEY=your-deepseek-api-key
 ```
 
-Without this, the app starts but natural language queries will fail. Login, connections, and permissions still work without it.
+To make it persist across terminal sessions, add it to your shell profile:
+
+```bash
+echo 'export DEEPSEEK_KEY=your-deepseek-api-key' >> ~/.zshrc
+source ~/.zshrc
+```
+
+Without a valid key, the app starts but natural language queries will fail. Login, connections, and permissions still work without it.
 
 For production, also set:
 

@@ -25,8 +25,7 @@ spring:
 
   # Spring AI - disabled for tests (mocked)
   ai:
-    openai:
-      base-url: https://api.deepseek.com
+    deepseek:
       api-key: test-key-not-real
       chat:
         options:
